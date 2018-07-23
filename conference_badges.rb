@@ -21,12 +21,12 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
-  array =[]
-  index = 1
-  attendees.each do |member|
-    array << badge_maker(member)
-    array << "Hello, #{member}! You'll be assigned to room #{index}!"
-    index+=1
+  badge_messages = batch_badge_creator(speakers)
+  badge_messages.each do |message|
+    puts message
   end
-  array
+  room_messages = assign_rooms(speakers)
+  room_messages.each do |message|
+    puts message
+  end
 end
