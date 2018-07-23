@@ -11,5 +11,9 @@ def batch_badge_creator(attendees)
 end
 
 def assign_rooms(attendees)
-  attendees.each_with_index {|val,index| return "Hello, #{val}! You'll be assigned to room #{index}!"}
+  index = 1
+  attendees.each do |member|
+    return "Hello, #{member}! You'll be assigned to room #{index}!"
+    index+=1
+  end
 end
